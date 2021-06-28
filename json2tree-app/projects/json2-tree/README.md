@@ -1,24 +1,90 @@
 # Json2Tree
+## JSON data to Tree View
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+This library is mainly created to easily visualize JSON data/string into Object tree.
+It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project json2-tree` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project json2-tree`.
-> Note: Don't forget to add `--project json2-tree` or else it will be added to the default project in your `angular.json` file. 
+`npm install json2-tree`
 
-## Build
+To save this in dependencies:
+`npm install json2-tree --save`
 
-Run `ng build json2-tree` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Publishing
+In your parent module, Import `Json2TreeModule`
 
-After building your library with `ng build json2-tree`, go to the dist folder `cd dist/json2-tree` and run `npm publish`.
+```html
+@NgModule({
+  ...,
+  imports: [
+    ...,
+    Json2TreeModule,
+    ...
+  ],
+  ...
+})
+export class AppModule { }
+```
 
-## Running unit tests
+In your component:
+`<json2-tree [data]="data"></json2-tree>`
 
-Run `ng test json2-tree` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To expand all nodes:
+`<json2-tree [data]="data" [expandAllNodes]=true></json2-tree>`
+
+To expand only 2 levels:
+`<json2-tree [data]="data" [expandLevel]=2></json2-tree>`
+
+## Example
+
+An example for this project can be found at [github-pages](https://github.com/jeganathpv/json2tree) of this repository 
+
+## Properties
+
+Name | Type | Default | Description
+----|----|----|----
+data|any|null| JSON Object or string to display
+expandAllNodes|boolean| false| Set this to `true` to expand all the nodes(If available)
+expandLevel|number|-1|To expand nodes for given levels
+separator|string|:|To change the separator
+style|any|null|Inline style of the component
+
+## Styles Used
+Name|Element
+----|----
+jtree-node| Node element
+jnode-toggler| Toggle element
+jnode-key| Node key element
+jnode-separator| Separator element
+jnode-value| Node value element
+child-jnode| Children (or) Nested Node element
+
+## Dependencies
+None.
+
+## Changelog
+
+> v1.0.0
+
+- Initial Release
+
+## Development
+
+Want to contribute? Great!
+
+Make a change in your file and instantaneously see your updates!
+
+## Credits
+A credit to [JSON formatter](https://jsonformatter.org/) where I got the idea to develop this.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more on this, go and check out the [json2-tree](https://github.com/jeganathpv/json2tree) github page.
+
+### Reach out to me
+> [Jeganath PV](https://jeganathpv.github.io/)
+
+*Thank you!*
+

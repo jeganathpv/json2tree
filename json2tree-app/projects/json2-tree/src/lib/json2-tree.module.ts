@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { Json2TreeComponent } from './json2-tree.component';
 
 
@@ -8,6 +9,7 @@ import { Json2TreeComponent } from './json2-tree.component';
     Json2TreeComponent
   ],
   imports: [
+    BrowserModule
   ],
   exports: [
     Json2TreeComponent

@@ -1,27 +1,90 @@
-# Json2treeApp
+# Ngx-JSON-Tree
+## JSON data to Tree View
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+This library is mainly created to easily visualize JSON data/string into Object tree.
+It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`npm install json2-tree`
 
-## Code scaffolding
+To save this in dependencies:
+`npm install json2-tree --save`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+In your parent module, Import `Json2TreeModule`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```html
+@NgModule({
+  ...,
+  imports: [
+    ...,
+    Json2TreeModule,
+    ...
+  ],
+  ...
+})
+export class AppModule { }
+```
 
-## Running unit tests
+In your component:
+`<json2-tree [data]="data"></json2-tree>`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To expand all nodes:
+`<json2-tree [data]="data" [expandAllNodes]=true></json2-tree>`
 
-## Running end-to-end tests
+To expand only 2 levels:
+`<json2-tree [data]="data" [expandLevel]=2></json2-tree>`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Example
+
+An example for this project can be found at [github-pages](https://github.com/jeganathpv/json2tree) of this repository 
+
+## Properties
+
+Name | Type | Default | Description
+----|----|----|----
+data|any|null| JSON Object or string to display
+expandAllNodes|boolean| false| Set this to `true` to expand all the nodes(If available)
+expandLevel|number|-1|To expand nodes for given levels
+separator|string|:|To change the separator
+style|any|null|Inline style of the component
+
+## Styles Used
+Name|Element
+----|----
+jtree-node| Node element
+jnode-toggler| Toggle element
+jnode-key| Node key element
+jnode-separator| Separator element
+jnode-value| Node value element
+child-jnode| Children (or) Nested Node element
+
+## Dependencies
+None.
+
+## Changelog
+
+> v1.0.0
+
+- Initial Release
+
+## Development
+
+Want to contribute? Great!
+
+Make a change in your file and instantaneously see your updates!
+
+## Credits
+A credit to [JSON formatter](https://jsonformatter.org/) where I got the idea to develop this.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more on this, go and check out the [json2-tree](https://github.com/jeganathpv/json2tree) github page.
+
+### Reach out to me
+> [Jeganath PV](https://jeganathpv.github.io/)
+
+*Thank you!*
+

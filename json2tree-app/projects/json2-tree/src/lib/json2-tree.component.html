@@ -1,0 +1,13 @@
+<div class="json-tree" [ngStyle]="style">
+    <div *ngFor="let node of nodes;" class="jtree-node" (click)="toggleNode($event,node)">
+      <div>
+        <span *ngIf="isNodeExpandable(node)" class="jnode-toggler"><i [ngClass]="node.isExpanded ? 'icon-collapse' : 'icon-expand'"></i></span>
+        <span class="jnode-key"> {{node.key}}</span>
+        <span class="jnode-separator" [ngClass]="{'object' : node.datatype !== 0}">{{separator}} </span>
+        <span *ngIf="!node.isExpanded|| !isNodeExpandable(node)" class="jnode-value"> {{node.content}}</span>
+        <div *ngIf="node.isExpanded && isNodeExpandable(node)" class="child-jnode">
+          <json2-tree [data]="node.value" [expandAllNodes]="expandAllNodes" [_currentLevel]="_currentLevel"></json2-tree>
+        </div>
+      </div>
+    </div>
+</div>
