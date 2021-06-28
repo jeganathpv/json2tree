@@ -1,6 +1,6 @@
 {
-  "name": "json2-tree",
-  "version": "1.0.0",
+  "name": "ngx-json-tree",
+  "version": "1.0.1",
   "description": "A simple library to visualize JSON Object/String in Tree structure",
   "author": "Jeganth PV",
   "repository": {
@@ -26,5 +26,12 @@
   },
   "dependencies": {
     "tslib": "^2.1.0"
-  }
+  },
+  "main": "bundles/json2-tree.umd.js",
+  "module": "fesm2015/json2-tree.js",
+  "es2015": "fesm2015/json2-tree.js",
+  "esm2015": "esm2015/json2-tree.js",
+  "fesm2015": "fesm2015/json2-tree.js",
+  "typings": "json2-tree.d.ts",
+  "sideEffects": false
 }
