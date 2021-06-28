@@ -1,4 +1,4 @@
-# Json2Tree
+# Ngx-JSON-Tree
 ## JSON data to Tree View
 
 This library is mainly created to easily visualize JSON data/string into Object tree.
