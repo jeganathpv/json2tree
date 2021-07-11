@@ -1,1 +1,22 @@
-<json2-tree [data]="data"></json2-tree>
+<header class="header">
+    <span>JSON2Tree</span>
+    <div>
+        <span>Demo</span>
+    </div>
+</header>
+<section class="container">
+    <div class="input-area">
+        <span class="title">Json Input</span>
+        <textarea class="text-area" [rows]="20" [(ngModel)]="text" autoResize="false"></textarea>
+    </div>
+    <div class="input-area">
+        <span class="title">Tree Input</span>
+        <div *ngIf="text.length > 0">
+            <json2-tree [data]="text"></json2-tree>
+        </div>
+    </div>
+</section>
+
+
+
+
